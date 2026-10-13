@@ -1,0 +1,39 @@
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <a href="{{ '/' | relative_url }}" class="masthead__brand" id="brandHomeLink">
+      <span class="masthead__brand-name">{{ site.name | default: site.author.name }}</span>
+      <span class="masthead__brand-kr">{{ site.korean_name_short | default: site.author.korean_name_short | default: '이관민' }}</span>
+    </a>
+    <nav class="masthead__nav">
+      <ul class="masthead__links">
+        {% assign nav_items = site.navigation | default: site.data.navigation.main %}
+        {% for item in nav_items %}
+        {% assign item_slug = item.slug | default: item.url | remove: '/' %}
+        <li class="masthead__item{% if page.url == item.url or page.slug == item_slug %} active{% endif %}" data-page="{{ item_slug }}">
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <button id="mobileNavToggle" class="masthead__toggle-btn" aria-label="Open Menu">
+        <div class="masthead__toggle-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </nav>
+  </div>
+</div>
+<div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true">
+  <div class="mobile-nav-body">
+    <ul class="mobile-nav-list">
+      {% assign nav_items = site.navigation | default: site.data.navigation.main %}
+      {% for item in nav_items %}
+      {% assign item_slug = item.slug | default: item.url | remove: '/' %}
+      <li class="mobile-nav-item{% if page.url == item.url or page.slug == item_slug %} active{% endif %}" data-page="{{ item_slug }}">
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

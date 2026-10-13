@@ -1,0 +1,55 @@
+title: "Kwan Min Lee | 이관민"
+name: "Kwan Min Lee"
+korean_name: "이관민 (李寬敏)"
+korean_name_short: "이관민"
+email: "kwanminlee@ntu.edu.sg"
+description: "Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media at NTU Singapore."
+url: "https://profkwanminlee.github.io"
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+include:
+  - _pages
+
+author:
+  avatar: "profkwanportrait.jpeg"
+  name: "Kwan Min Lee"
+  korean_name: "이관민 (李寬敏)"
+  korean_name_short: "이관민"
+  title: "Korea Foundation Endowed Chair Professor"
+  employer: "NTU Singapore"
+  location: "Singapore"
+  email: "kwanminlee@ntu.edu.sg"
+  googlescholar: "https://scholar.google.com/citations?user=G9RTDwMAAAAJ&hl=en"
+  orcid: "0000-0002-2186-3345"
+  linkedin: "https://www.linkedin.com/in/leekwanmin"
+  ntu_profile: "https://dr.ntu.edu.sg/entities/person/Lee-Kwan-Min"
+
+navigation:
+  - title: "Appointments"
+    url: "/appointments/"
+    slug: "appointments"
+  - title: "Highly Cited"
+    url: "/highly-cited/"
+    slug: "highly-cited"
+  - title: "Labs"
+    url: "/labs/"
+    slug: "labs"
+  - title: "Deep Thought Innovation"
+    url: "/deep-thought-innovation/"
+    slug: "deep-thought-innovation"
+  - title: "Awards"
+    url: "/awards/"
+    slug: "awards"
+  - title: "Patents"
+    url: "/patents/"
+    slug: "patents"
+  - title: "Keynotes"
+    url: "/keynotes/"
+    slug: "keynotes"
+  - title: "Press"
+    url: "/press/"
+    slug: "press"

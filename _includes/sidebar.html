@@ -1,0 +1,62 @@
+<div class="sidebar sticky">
+  <div itemscope itemtype="http://schema.org/Person">
+    <div class="sidebar-profile-box">
+      <div class="author__avatar">
+        <img src="{% if site.author.avatar contains 'http' or site.author.avatar contains '/' %}{{ site.author.avatar | relative_url }}{% else %}{{ site.author.avatar | default: 'profkwanportrait.jpeg' | prepend: '/images/' | relative_url }}{% endif %}" alt="{{ site.author.name | default: site.name }}">
+      </div>
+      <div class="author__content">
+        <h3 class="author__name">{{ site.author.name | default: site.name }}</h3>
+        {% if site.author.korean_name or site.korean_name %}
+        <p class="author__korean">{{ site.author.korean_name | default: site.korean_name }}</p>
+        {% endif %}
+      </div>
+      <button id="authorConnectBtn" class="author__connect-btn" aria-label="Toggle Links">
+        Connect <i class="fas fa-chevron-down"></i>
+      </button>
+    </div>
+    <div id="authorUrlsWrapper" class="author__urls-wrapper">
+      <ul class="author__urls">
+        {% if site.author.location %}
+        <li class="author__desktop"><i class="fa-solid fa-location-dot"></i><span>{{ site.author.location }}</span></li>
+        {% endif %}
+        {% if site.author.employer %}
+        <li class="author__desktop"><i class="fas fa-building-columns"></i><span>{{ site.author.employer }}</span></li>
+        {% endif %}
+        {% if site.author.googlescholar %}
+        {% assign scholar_url = site.author.googlescholar %}
+        {% unless scholar_url contains 'http' %}
+        {% assign scholar_url = scholar_url | prepend: 'https://scholar.google.com/citations?user=' %}
+        {% endunless %}
+        <li><a href="{{ scholar_url }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i><span>Google Scholar</span></a></li>
+        {% endif %}
+        {% if site.author.orcid %}
+        {% assign orcid_url = site.author.orcid %}
+        {% unless orcid_url contains 'http' %}
+        {% assign orcid_url = orcid_url | prepend: 'https://orcid.org/' %}
+        {% endunless %}
+        <li><a href="{{ orcid_url }}" target="_blank" rel="noopener"><i class="ai ai-orcid"></i><span>ORCID</span></a></li>
+        {% endif %}
+        {% if site.author.ntu_profile %}
+        <li><a href="{{ site.author.ntu_profile }}" target="_blank" rel="noopener"><i class="fas fa-university"></i><span>NTU Profile</span></a></li>
+        {% endif %}
+        {% if site.author.linkedin %}
+        {% assign linkedin_url = site.author.linkedin %}
+        {% unless linkedin_url contains 'http' %}
+        {% assign linkedin_url = linkedin_url | prepend: 'https://www.linkedin.com/in/' %}
+        {% endunless %}
+        <li><a href="{{ linkedin_url }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+        {% endif %}
+        {% if site.author.github %}
+        {% assign github_url = site.author.github %}
+        {% unless github_url contains 'http' %}
+        {% assign github_url = github_url | prepend: 'https://github.com/' %}
+        {% endunless %}
+        <li><a href="{{ github_url }}" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+        {% endif %}
+        {% if site.author.email %}
+        <li><a href="mailto:{{ site.author.email }}"><i class="fas fa-envelope"></i><span>Email</span></a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

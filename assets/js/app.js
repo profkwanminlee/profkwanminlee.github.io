@@ -1,12 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const views = document.querySelectorAll('.page-view');
-  const desktopNavItems = document.querySelectorAll('.masthead__item');
-  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
   const mobileNavOverlay = document.getElementById('mobileNavOverlay');
   const mobileNavToggle = document.getElementById('mobileNavToggle');
   const mobileNavClose = document.getElementById('mobileNavClose');
-  const brandHomeLink = document.getElementById('brandHomeLink');
-  const mobileBrandLink = document.querySelector('.mobile-brand-link');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-list a');
 
   const authorConnectBtn = document.getElementById('authorConnectBtn');
   const authorUrlsWrapper = document.getElementById('authorUrlsWrapper');
@@ -14,102 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const pubSearchInput = document.getElementById('pubSearchInput');
   const pubSearchClear = document.getElementById('pubSearchClear');
   const pubSearchMeta = document.getElementById('pubSearchMeta');
-  const pubEntries = document.querySelectorAll('.pub-entry');
-
-  function navigateTo(pageId, scroll = true) {
-    if (!pageId || pageId === '') pageId = 'home';
-    pageId = pageId.toLowerCase().replace('#', '');
-
-    let scrollToPatents = false;
-    if (pageId === 'patents') {
-      pageId = 'work';
-      scrollToPatents = true;
-    }
-
-    const targetView = document.getElementById(`view-${pageId}`);
-    if (!targetView) {
-      pageId = 'home';
-    }
-
-    views.forEach(view => {
-      if (view.id === `view-${pageId}`) {
-        view.classList.add('active-view');
-      } else {
-        view.classList.remove('active-view');
-      }
-    });
-
-    desktopNavItems.forEach(item => {
-      const itemPage = item.getAttribute('data-page');
-      if (itemPage === pageId) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-
-    mobileNavItems.forEach(item => {
-      const itemPage = item.getAttribute('data-page');
-      if (itemPage === pageId) {
-        item.classList.add('active');
-      } else {
-        item.classList.remove('active');
-      }
-    });
-
-    if (scroll) {
-      if (scrollToPatents) {
-        const patentsEl = document.getElementById('patents-section');
-        if (patentsEl) {
-          patentsEl.scrollIntoView({ behavior: 'smooth' });
-          return;
-        }
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  function handleHash() {
-    const hash = window.location.hash.slice(1);
-    if (hash === 'menu') {
-      openMobileMenu();
-      return;
-    }
-    if (hash === 'connect') {
-      if (authorUrlsWrapper) authorUrlsWrapper.classList.add('is-expanded');
-      return;
-    }
-    navigateTo(hash || 'home', true);
-  }
-
-  window.addEventListener('hashchange', handleHash);
-  handleHash();
-
-  if (brandHomeLink) {
-    brandHomeLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMobileMenu();
-      window.location.hash = '#home';
-      navigateTo('home', true);
-    });
-  }
-
-  if (mobileBrandLink) {
-    mobileBrandLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      closeMobileMenu();
-      window.location.hash = '#home';
-      navigateTo('home', true);
-    });
-  }
-
-  function toggleMobileMenu() {
-    if (mobileNavOverlay && mobileNavOverlay.classList.contains('is-active')) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
-    }
-  }
+  const pubEntries = document.querySelectorAll('.pub-entry, .recognition-entry');
 
   function openMobileMenu() {
     if (mobileNavOverlay) {
@@ -129,6 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function toggleMobileMenu() {
+    if (mobileNavOverlay && mobileNavOverlay.classList.contains('is-active')) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
+
   if (mobileNavToggle) {
     mobileNavToggle.addEventListener('click', toggleMobileMenu);
   }
@@ -137,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavClose.addEventListener('click', closeMobileMenu);
   }
 
-  mobileNavItems.forEach(item => {
-    item.addEventListener('click', () => {
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
       closeMobileMenu();
     });
   });
@@ -156,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMobileMenu();
     }
   });
-
 
   if (authorConnectBtn && authorUrlsWrapper) {
     authorConnectBtn.addEventListener('click', (e) => {
@@ -194,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
           fullText.includes(query);
 
         if (isMatch) {
-          entry.style.display = 'block';
+          entry.style.display = '';
           visibleCount++;
         } else {
           entry.style.display = 'none';
@@ -225,5 +133,54 @@ document.addEventListener('DOMContentLoaded', () => {
     if (pubSearchMeta) {
       pubSearchMeta.textContent = `Showing all ${totalPubs} publications`;
     }
+  }
+
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.querySelector('.icon.sun');
+  const moonIcon = document.querySelector('.icon.moon');
+
+  function updateThemeIcons() {
+    const isLight = document.documentElement.classList.contains('light-mode');
+    if (sunIcon) sunIcon.classList.toggle('visible', isLight);
+    if (moonIcon) moonIcon.classList.toggle('visible', !isLight);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.contains('light-mode');
+      if (isLight) {
+        document.documentElement.classList.remove('light-mode');
+        document.documentElement.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+        document.documentElement.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+      }
+      updateThemeIcons();
+    });
+  }
+  updateThemeIcons();
+
+  const jttBtn = document.getElementById('jump-to-top');
+  if (jttBtn) {
+    jttBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    let jttPending = false;
+    function updateJtt() {
+      if (jttPending) return;
+      jttPending = true;
+      requestAnimationFrame(() => {
+        jttPending = false;
+        const scrollable = document.body.scrollHeight > window.innerHeight;
+        const notAtTop = window.scrollY > 80;
+        jttBtn.classList.toggle('visible', scrollable && notAtTop);
+      });
+    }
+
+    setTimeout(updateJtt, 100);
+    window.addEventListener('scroll', updateJtt, { passive: true });
   }
 });
