@@ -50,6 +50,10 @@ navigation:
   - title: "Keynotes"
     url: "/keynotes/"
     slug: "keynotes"
+  - title: "Services"
+    url: "/services/"
+    slug: "services"
   - title: "Press"
     url: "/press/"
     slug: "press"
+

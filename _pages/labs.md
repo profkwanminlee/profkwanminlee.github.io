@@ -25,7 +25,7 @@ slug: labs
 <div class="lab-body">
 <p class="lab-desc">Investigating the psychological, cognitive, and social dynamics of interaction between humans and artificial intelligence systems. Core research thrusts include user experience of conversational agents and virtual influencers, multi-agent LLM social simulations, explainable AI (XAI) trust calibration, and immersive behavioral presence in VR/XR and social robotics.</p>
 <div class="media-actions">
-<a class="pub-badge-link" href="https://hail.kwanminlee.com/" rel="noopener noreferrer" target="_blank">
+<a class="pub-badge-link" href="https://profkwanminlee.github.io/hail/" rel="noopener noreferrer" target="_blank">
 <i class="fas fa-arrow-up-right-from-square"></i> Visit HAIL Website &amp; Projects →
                     </a>
 </div>
@@ -37,14 +37,14 @@ slug: labs
 <i class="fas fa-earth-asia"></i>
 </div>
 <div class="lab-header-copy">
-<h2 class="lab-name">Contemporary Korea Studies Lab (KSL)</h2>
+<h2 class="lab-name">Contemporary Korean Studies Lab (CKSL)</h2>
 <div class="lab-directors">Director: Prof. Kwan Min Lee (Korea Foundation Endowed Chair Professor) • WKWSCI, NTU Singapore</div>
 </div>
 </header>
 <div class="lab-body">
 <p class="lab-desc">International academic center dedicated to empirical and interdisciplinary research on modern Korean society, new media technologies, global cultural diffusion (Hallyu), digital platforms, and national cultural innovation policies.</p>
 <div class="media-actions">
-<a class="pub-badge-link" href="https://ksl.kwanminlee.com/" rel="noopener noreferrer" target="_blank">
+<a class="pub-badge-link" href="https://profkwanminlee.github.io/cksl/" rel="noopener noreferrer" target="_blank">
 <i class="fas fa-globe"></i> Visit Korean Studies Lab Portal →
                     </a>
 </div>
