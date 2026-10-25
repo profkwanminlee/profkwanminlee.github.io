@@ -1430,6 +1430,30 @@ html.dark-mode .exp-role-icon img[src*="cj" i] {
   margin-top: 0.5rem;
 }
 
+.pub-entry-links {
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-meta);
+  line-height: 1.5;
+}
+
+.pub-entry-links a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.pub-entry-links a:hover {
+  color: var(--link-color, #C8102E);
+}
+
+.pub-cite-note {
+  font-size: 0.88rem;
+  color: var(--text-meta);
+}
+
 .pub-badge-type {
   display: inline-flex;
   align-items: center;
