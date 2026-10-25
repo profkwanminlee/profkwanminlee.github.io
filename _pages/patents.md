@@ -5,7 +5,7 @@ permalink: /patents/
 slug: patents
 ---
 
-# Patents
+<h1 class="page__title">Patents</h1>
 
 10 Granted United States Patents developed and commercialized through consumer electronics innovation, smart TV platforms, conversational interfaces, and interactive display systems.
 

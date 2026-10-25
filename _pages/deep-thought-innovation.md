@@ -5,7 +5,7 @@ permalink: /deep-thought-innovation/
 slug: deep-thought-innovation
 ---
 
-# Deep Thought Innovation (DTI)
+<h1 class="page__title">Deep Thought Innovation (DTI)</h1>
 
 A Conceptual and Methodological Framework by **Prof. Kwan Min Lee**
 

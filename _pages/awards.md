@@ -5,7 +5,7 @@ permalink: /awards/
 slug: awards
 ---
 
-# Awards
+<h1 class="page__title">Awards</h1>
 
 Major awards and recognitions received from academia, international societies, and global technology industry.
 

@@ -5,7 +5,7 @@ permalink: /labs/
 slug: labs
 ---
 
-# Research Laboratories
+<h1 class="page__title">Research Laboratories</h1>
 
 Research laboratories directed and co-directed by Prof. Kwan Min Lee at Nanyang Technological University (NTU), Singapore.
 

@@ -5,7 +5,7 @@ permalink: /keynotes/
 slug: keynotes
 ---
 
-# Keynotes
+<h1 class="page__title">Keynotes</h1>
 
 Representative keynotes, presidential briefings, and invited addresses delivered at academic congresses, government forums, and industry conventions.
 

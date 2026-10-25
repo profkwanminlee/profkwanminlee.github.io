@@ -5,7 +5,7 @@ permalink: /press/
 slug: press
 ---
 
-# Press
+<h1 class="page__title">Press</h1>
 
 Selected Op-Ed columns, thought leadership articles, and international media features by Prof. Kwan Min Lee.
 

@@ -5,7 +5,7 @@ permalink: /services/
 slug: services
 ---
 
-# Services
+<h1 class="page__title">Services</h1>
 
 Executive industry advisory, strategic consulting, new product and service planning, and human-centered design-thinking workshops for global technology corporations and research institutes.
 

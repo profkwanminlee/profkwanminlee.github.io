@@ -5,7 +5,7 @@ permalink: /appointments/
 slug: appointments
 ---
 
-# Appointments
+<h1 class="page__title">Appointments</h1>
 
 Academic appointments, institutional leadership, and corporate advisory history spanning Stanford, USC, SKKU, Samsung Electronics, and NTU Singapore.
 
