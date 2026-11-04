@@ -5,11 +5,11 @@
 :root,
 html.dark-mode {
   --bg-color: #0d0e11;
-  --bg-masthead-gradient: linear-gradient(180deg, rgba(6, 7, 9, 0.92) 0%, rgba(9, 10, 13, 0.85) 12%, rgba(16, 17, 22, 0.72) 22%, rgba(10, 11, 14, 0.82) 100%);
-  --bg-dropdown: linear-gradient(180deg, rgba(16, 17, 22, 0.78) 0%, rgba(10, 11, 14, 0.88) 100%);
+  --bg-masthead-gradient: linear-gradient(180deg, rgba(12, 13, 16, 0.97) 0%, rgba(22, 24, 30, 0.97) 100%);
+  --bg-dropdown: linear-gradient(180deg, rgba(16, 17, 22, 0.95) 0%, rgba(10, 11, 14, 0.95) 100%);
   --bg-card: #14151a;
   --bg-card-hover: #1b1d23;
-  --bg-glass: rgba(13, 14, 17, 0.85);
+  --bg-glass: rgba(13, 14, 17, 0.92);
   --bg-subtle: rgba(223, 216, 204, 0.06);
   --bg-subtle-hover: rgba(223, 216, 204, 0.10);
 
@@ -45,7 +45,7 @@ html.dark-mode {
   --selection-bg: #e0dcc7;
   --selection-color: #0d0e11;
 
-  --footer-bg: linear-gradient(180deg, #322e27 0%, #24221c 10%, #161513 24%, #161513 100%);
+  --footer-bg: linear-gradient(180deg, #242220 0%, #161514 100%);
   --footer-border: 2.5px solid rgba(214, 208, 196, 0.28);
   --footer-border-width: 2.5px;
   --footer-border-color: rgba(214, 208, 196, 0.28);
@@ -54,7 +54,8 @@ html.dark-mode {
   --dropdown-line-width: 2px;
   --dropdown-line-color: rgba(214, 208, 196, 0.18);
   --dropdown-line-hover: rgba(255, 255, 255, 0.90);
-  --masthead-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  --masthead-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  --footer-shadow: 0 -2px 14px rgba(0, 0, 0, 0.35);
   --footer-shadow: 0 -4px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   --dropdown-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --dropdown-line-shadow: none;
@@ -77,17 +78,17 @@ html.dark-mode {
   --floating-text: #e0dcc7;
 
   --masthead-height: 66px;
-  --max-width: 1280px;
+  --max-width: 1320px;
   --sidebar-width: 250px;
 }
 
 html.light-mode {
   --bg-color: #ffffff;
-  --bg-masthead-gradient: linear-gradient(180deg, rgba(216, 208, 196, 0.78) 0%, rgba(235, 230, 221, 0.65) 12%, rgba(255, 255, 255, 0.75) 22%, rgba(246, 243, 237, 0.84) 100%);
-  --bg-dropdown: linear-gradient(180deg, rgba(255, 255, 255, 0.74) 0%, rgba(248, 246, 241, 0.84) 100%);
+  --bg-masthead-gradient: linear-gradient(180deg, rgba(243, 237, 224, 0.97) 0%, rgba(254, 252, 249, 0.97) 100%);
+  --bg-dropdown: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 246, 241, 0.95) 100%);
   --bg-card: #fcfbf9;
   --bg-card-hover: #f5f3ef;
-  --bg-glass: rgba(255, 255, 255, 0.88);
+  --bg-glass: rgba(255, 255, 255, 0.92);
   --bg-subtle: rgba(40, 36, 30, 0.04);
   --bg-subtle-hover: rgba(40, 36, 30, 0.08);
 
@@ -123,17 +124,17 @@ html.light-mode {
   --selection-bg: #84611f;
   --selection-color: #ffffff;
 
-  --footer-bg: linear-gradient(180deg, #2d220e 0%, #1d1607 10%, #0d0900 24%, #0d0900 100%);
-  --footer-border: 2.5px solid rgba(60, 50, 38, 0.22);
+  --footer-bg: linear-gradient(180deg, #262420 0%, #171513 100%);
+  --footer-border: 2.5px solid rgba(132, 97, 31, 0.35);
   --footer-border-width: 2.5px;
-  --footer-border-color: rgba(60, 50, 38, 0.22);
+  --footer-border-color: rgba(132, 97, 31, 0.35);
   --masthead-border-width: 2.5px;
-  --masthead-border-color: rgba(60, 50, 38, 0.22);
+  --masthead-border-color: rgba(132, 97, 31, 0.28);
   --dropdown-line-width: 2px;
   --dropdown-line-color: rgba(60, 50, 38, 0.14);
   --dropdown-line-hover: #6d533b;
-  --masthead-shadow: 0 4px 22px rgba(40, 32, 20, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  --footer-shadow: 0 -4px 22px rgba(40, 32, 20, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --masthead-shadow: 0 2px 12px rgba(40, 32, 20, 0.05);
+  --footer-shadow: 0 -2px 14px rgba(40, 32, 20, 0.08);
   --dropdown-shadow: 0 20px 44px rgba(40, 32, 20, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   --dropdown-line-shadow: none;
   --masthead-text: #121110;
@@ -293,8 +294,8 @@ hr.silver-line {
   width: 100%;
   height: var(--masthead-height);
   background: var(--bg-masthead-gradient);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
   border-bottom: var(--masthead-border-width, 2.5px) solid var(--masthead-border-color);
   box-shadow: var(--masthead-shadow);
   z-index: 2001;
@@ -1936,11 +1937,12 @@ html.dark-mode .exp-role-icon img[src*="cj" i] {
   width: 100%;
   margin-top: 3rem;
   background: var(--footer-bg);
-  backdrop-filter: blur(24px) saturate(140%);
-  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
   border-top: var(--footer-border-width, 2.5px) solid var(--footer-border-color);
   box-shadow: var(--footer-shadow);
   padding: 1.5rem 0;
+  color: #FFFFFF !important;
 }
 
 .page__footer footer {
@@ -1951,28 +1953,36 @@ html.dark-mode .exp-role-icon img[src*="cj" i] {
   justify-content: space-between;
   align-items: center;
   font-size: 0.88rem;
-  color: var(--text-primary);
+  color: #FFFFFF !important;
 }
 
-.footer__left strong {
-  color: var(--text-primary);
+.page__footer .footer__left {
+  color: #F0ECE1 !important;
 }
 
-.footer__right {
+.page__footer .footer__left strong {
+  color: #FFFFFF !important;
+}
+
+.page__footer .footer__right {
   font-size: 0.84rem;
-  color: var(--text-secondary);
+  color: #FFFFFF !important;
 }
 
 html.light-mode .page__footer {
-  color: #ece8dd;
+  color: #FFFFFF !important;
+}
+
+html.light-mode .page__footer .footer__left {
+  color: #F0ECE1 !important;
 }
 
 html.light-mode .page__footer .footer__left strong {
-  color: #ffffff;
+  color: #FFFFFF !important;
 }
 
 html.light-mode .page__footer .footer__right {
-  color: #c8c2b4;
+  color: #FFFFFF !important;
 }
 
 @media screen and (max-width: 1220px) {
