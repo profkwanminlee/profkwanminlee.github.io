@@ -9,15 +9,13 @@ slug: labs
 
 Research laboratories directed and co-directed by Prof. Kwan Min Lee at Nanyang Technological University (NTU), Singapore.
 
-## Human-AI Interaction Lab (HAIL)
-* **Director:** Prof. Kwan Min Lee • Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore
-* **Overview:** Investigating the psychological, cognitive, and social dynamics of interaction between humans and artificial intelligence systems. Core research thrusts include user experience of conversational agents and virtual influencers, multi-agent LLM social simulations, explainable AI (XAI) trust calibration, and immersive behavioral presence in VR/XR and social robotics.
-* [Visit HAIL Website & Projects →](https://profkwanminlee.github.io/hail/)
-
-## Korean Studies Lab (KSL)
+## <a href="https://profkwanminlee.github.io/ksl/" target="_blank" rel="noopener noreferrer" class="lab-title-link" title="Visit Korean Studies Lab">Korean Studies Lab (KSL)</a>
 * **Director:** Prof. Kwan Min Lee (Korea Foundation Endowed Chair Professor) • Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore
 * **Overview:** International academic center dedicated to empirical and interdisciplinary research on modern Korean society, new media technologies, global cultural diffusion (Hallyu), digital platforms, and national cultural innovation policies.
-* [Visit Korean Studies Lab Portal →](https://profkwanminlee.github.io/ksl/)
+
+## <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener noreferrer" class="lab-title-link" title="Visit Human-AI Interaction Lab">Human-AI Interaction Lab (HAIL)</a>
+* **Director:** Prof. Kwan Min Lee • Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore
+* **Overview:** Investigating the psychological, cognitive, and social dynamics of interaction between humans and artificial intelligence systems. Core research thrusts include user experience of conversational agents and virtual influencers, multi-agent LLM social simulations, explainable AI (XAI) trust calibration, and immersive behavioral presence in VR/XR and social robotics.
 
 ## Interaction Lab
 * **Co-Directors:** Prof. Kwan Min Lee & Prof. Xu Hong (Associate Professor of Psychology) • ACDC, CoHASS, NTU Singapore

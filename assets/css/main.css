@@ -5,7 +5,7 @@
 :root,
 html.dark-mode {
   --bg-color: #0d0e11;
-  --bg-masthead-gradient: linear-gradient(180deg, rgba(16, 17, 22, 0.68) 0%, rgba(10, 11, 14, 0.78) 100%);
+  --bg-masthead-gradient: linear-gradient(180deg, rgba(6, 7, 9, 0.92) 0%, rgba(9, 10, 13, 0.85) 12%, rgba(16, 17, 22, 0.72) 22%, rgba(10, 11, 14, 0.82) 100%);
   --bg-dropdown: linear-gradient(180deg, rgba(16, 17, 22, 0.78) 0%, rgba(10, 11, 14, 0.88) 100%);
   --bg-card: #14151a;
   --bg-card-hover: #1b1d23;
@@ -45,7 +45,7 @@ html.dark-mode {
   --selection-bg: #e0dcc7;
   --selection-color: #0d0e11;
 
-  --footer-bg: linear-gradient(180deg, rgba(16, 17, 22, 0.70) 0%, rgba(10, 11, 14, 0.80) 100%);
+  --footer-bg: linear-gradient(180deg, #322e27 0%, #24221c 10%, #161513 24%, #161513 100%);
   --footer-border: 2.5px solid rgba(214, 208, 196, 0.28);
   --footer-border-width: 2.5px;
   --footer-border-color: rgba(214, 208, 196, 0.28);
@@ -54,7 +54,7 @@ html.dark-mode {
   --dropdown-line-width: 2px;
   --dropdown-line-color: rgba(214, 208, 196, 0.18);
   --dropdown-line-hover: rgba(255, 255, 255, 0.90);
-  --masthead-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  --masthead-shadow: 0 4px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.18);
   --footer-shadow: 0 -4px 24px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   --dropdown-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --dropdown-line-shadow: none;
@@ -83,7 +83,7 @@ html.dark-mode {
 
 html.light-mode {
   --bg-color: #ffffff;
-  --bg-masthead-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(246, 243, 237, 0.82) 100%);
+  --bg-masthead-gradient: linear-gradient(180deg, rgba(216, 208, 196, 0.78) 0%, rgba(235, 230, 221, 0.65) 12%, rgba(255, 255, 255, 0.75) 22%, rgba(246, 243, 237, 0.84) 100%);
   --bg-dropdown: linear-gradient(180deg, rgba(255, 255, 255, 0.74) 0%, rgba(248, 246, 241, 0.84) 100%);
   --bg-card: #fcfbf9;
   --bg-card-hover: #f5f3ef;
@@ -123,7 +123,7 @@ html.light-mode {
   --selection-bg: #84611f;
   --selection-color: #ffffff;
 
-  --footer-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.74) 0%, rgba(246, 243, 237, 0.84) 100%);
+  --footer-bg: linear-gradient(180deg, #2d220e 0%, #1d1607 10%, #0d0900 24%, #0d0900 100%);
   --footer-border: 2.5px solid rgba(60, 50, 38, 0.22);
   --footer-border-width: 2.5px;
   --footer-border-color: rgba(60, 50, 38, 0.22);
@@ -232,7 +232,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
   padding-bottom: 0.4em;
   border-bottom: 1.5px solid var(--border-rule);
@@ -241,14 +241,20 @@ h2 {
 }
 
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
   margin-top: 1.5rem;
 }
 
+h4 {
+  font-size: 1.10rem;
+  font-weight: 700;
+  margin-top: 1.2rem;
+}
+
 p {
   margin-bottom: 1.25rem;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   color: var(--text-primary);
 }
 
@@ -269,7 +275,7 @@ ul, ol {
 
 li {
   margin-bottom: 0.45rem;
-  font-size: 0.96rem;
+  font-size: 1.02rem;
   color: var(--text-primary);
 }
 
@@ -781,7 +787,7 @@ hr.silver-line {
 }
 
 .page__content {
-  font-size: 1rem;
+  font-size: 1.06rem;
   line-height: 1.75;
 }
 
@@ -1957,6 +1963,18 @@ html.dark-mode .exp-role-icon img[src*="cj" i] {
   color: var(--text-secondary);
 }
 
+html.light-mode .page__footer {
+  color: #ece8dd;
+}
+
+html.light-mode .page__footer .footer__left strong {
+  color: #ffffff;
+}
+
+html.light-mode .page__footer .footer__right {
+  color: #c8c2b4;
+}
+
 @media screen and (max-width: 1220px) {
   .masthead__item a {
     padding: 6px 9px;
@@ -2367,5 +2385,131 @@ html.dark-mode .exp-role-icon img[src*="cj" i] {
   .linkedin-embed-item iframe {
     width: 100% !important;
     max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   Research Labs Link Heading Styling
+   ========================================================================== */
+.lab-title-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+
+.lab-title-link:hover,
+.lab-title-link:focus-visible {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Floating Version Switcher Pill (Bottom Left)
+   ========================================================================== */
+.version-toggle-pill {
+  position: fixed;
+  bottom: 26px;
+  left: 22px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  background: var(--floating-bg);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--floating-shadow);
+  border: 1.5px solid var(--floating-border);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 3px;
+  user-select: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.version-toggle-pill:hover {
+  border-color: var(--floating-border-hover);
+  box-shadow: var(--floating-shadow-hover);
+}
+
+.version-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 15px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-meta);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.version-btn:hover {
+  color: var(--text-primary);
+}
+
+.version-btn.active {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+html.light-mode .version-btn.active {
+  background: #FFFFFF;
+  color: #121110;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* ==========================================================================
+   Version 2 Layout (No Sidebar, Stretched Content, 3-Column LinkedIn Feed)
+   ========================================================================== */
+[data-version="v2"] .sidebar {
+  display: none !important;
+}
+
+[data-version="v2"] #main {
+  display: block !important;
+  max-width: var(--max-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+[data-version="v2"] .page {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+[data-version="v2"] .page__inner-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media screen and (min-width: 1100px) {
+  [data-version="v2"] .linkedin-feed--grid {
+    column-count: 3 !important;
+    column-gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1099px) and (min-width: 861px) {
+  [data-version="v2"] .linkedin-feed--grid {
+    column-count: 2 !important;
+    column-gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  [data-version="v2"] #main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  [data-version="v2"] .linkedin-feed--grid {
+    column-count: 1 !important;
   }
 }

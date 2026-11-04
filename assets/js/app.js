@@ -184,6 +184,40 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateJtt, { passive: true });
   }
 
+  // Layout Version Switcher (V1: with sidebar, V2: full-width without sidebar)
+  const btnVersion1 = document.getElementById('btnVersion1');
+  const btnVersion2 = document.getElementById('btnVersion2');
+
+  function applyVersion(ver) {
+    const activeVer = ver === 'v2' ? 'v2' : 'v1';
+    document.documentElement.setAttribute('data-version', activeVer);
+    try {
+      localStorage.setItem('site_version', activeVer);
+    } catch (e) { }
+
+    if (btnVersion1 && btnVersion2) {
+      if (activeVer === 'v2') {
+        btnVersion2.classList.add('active');
+        btnVersion2.setAttribute('aria-pressed', 'true');
+        btnVersion1.classList.remove('active');
+        btnVersion1.setAttribute('aria-pressed', 'false');
+      } else {
+        btnVersion1.classList.add('active');
+        btnVersion1.setAttribute('aria-pressed', 'true');
+        btnVersion2.classList.remove('active');
+        btnVersion2.setAttribute('aria-pressed', 'false');
+      }
+    }
+  }
+
+  const initialVersion = document.documentElement.getAttribute('data-version') || 'v1';
+  applyVersion(initialVersion);
+
+  if (btnVersion1 && btnVersion2) {
+    btnVersion1.addEventListener('click', () => applyVersion('v1'));
+    btnVersion2.addEventListener('click', () => applyVersion('v2'));
+  }
+
   // Toggle showing all LinkedIn post embeds
   window.toggleAllLinkedInPosts = function() {
     const hiddenItems = document.querySelectorAll('.linkedin-embed-item.is-initially-hidden');

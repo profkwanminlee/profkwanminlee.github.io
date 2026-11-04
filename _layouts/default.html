@@ -18,6 +18,8 @@
         } else {
           document.documentElement.classList.add('dark-mode');
         }
+        var version = localStorage.getItem('site_version') || 'v1';
+        document.documentElement.setAttribute('data-version', version);
       } catch (e) { }
     })();
   </script>
@@ -36,6 +38,7 @@
   </div>
   {% include footer.html %}
   {% include theme-toggle.html %}
+  {% include version-toggle.html %}
   <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
 </body>
 </html>

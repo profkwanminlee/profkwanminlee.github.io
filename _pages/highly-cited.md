@@ -47,17 +47,6 @@ slug: highly-cited
 </div>
 </div>
 <h2>All Publications Archive</h2>
-<div class="pub-search-wrapper">
-  <span class="pub-search-icon" aria-hidden="true">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="11" cy="11" r="8"></circle>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-  </span>
-  <input autocomplete="off" class="pub-search-input" id="pubSearchInput" placeholder="Search publications by title, author, journal, topic, or year..." type="text"/>
-  <button aria-label="Clear Search" class="pub-search-clear" id="pubSearchClear" type="button">&times;</button>
-</div>
-<div class="pub-search-meta" id="pubSearchMeta">Showing all 63 publications</div>
 <div class="pub-list" id="publicationsContainer">
 <div class="pub-entry" data-keywords="virtual influencer’s apologies?: the different perceptions of moral violation and apology between virtual and human influencers in brand endorsements media psychology taenyun kim, chungheon lee, yanqin wu, kwan min lee 2026 article" data-title="Virtual Influencer’s Apologies?: The Different Perceptions of Moral Violation and Apology Between Virtual and Human Influencers in Brand Endorsements" data-venue="Media Psychology" data-year="2026">
 <div class="pub-entry-title">Virtual Influencer’s Apologies?: The Different Perceptions of Moral
