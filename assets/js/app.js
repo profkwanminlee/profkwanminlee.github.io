@@ -151,10 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (isLight) {
         document.documentElement.classList.remove('light-mode');
         document.documentElement.classList.add('dark-mode');
+        localStorage.setItem('site_theme', 'dark');
         localStorage.setItem('theme', 'dark');
       } else {
         document.documentElement.classList.remove('dark-mode');
         document.documentElement.classList.add('light-mode');
+        localStorage.setItem('site_theme', 'light');
         localStorage.setItem('theme', 'light');
       }
       updateThemeIcons();
@@ -184,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateJtt, { passive: true });
   }
 
-  // Layout Version Switcher (V1: with sidebar, V2: full-width without sidebar)
+  // Layout Version Switcher (V1: default without sidebar, V2: classic with sidebar)
   const btnVersion1 = document.getElementById('btnVersion1');
   const btnVersion2 = document.getElementById('btnVersion2');
 
@@ -192,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeVer = ver === 'v2' ? 'v2' : 'v1';
     document.documentElement.setAttribute('data-version', activeVer);
     try {
+      localStorage.setItem('site_layout_version', activeVer);
       localStorage.setItem('site_version', activeVer);
     } catch (e) { }
 

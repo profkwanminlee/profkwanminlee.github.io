@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-mode" data-version="v1">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,14 +12,20 @@
   <script>
     (function () {
       try {
-        var theme = localStorage.getItem('theme');
+        var theme = localStorage.getItem('site_theme');
         if (theme === 'light') {
+          document.documentElement.classList.remove('dark-mode');
           document.documentElement.classList.add('light-mode');
         } else {
+          document.documentElement.classList.remove('light-mode');
           document.documentElement.classList.add('dark-mode');
         }
-        var version = localStorage.getItem('site_version') || 'v1';
-        document.documentElement.setAttribute('data-version', version);
+        var version = localStorage.getItem('site_layout_version');
+        if (version === 'v2') {
+          document.documentElement.setAttribute('data-version', 'v2');
+        } else {
+          document.documentElement.setAttribute('data-version', 'v1');
+        }
       } catch (e) { }
     })();
   </script>

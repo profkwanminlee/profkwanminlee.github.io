@@ -7,7 +7,7 @@ slug: highly-cited
 
 <h1 class="page__title">Highly Cited Publications</h1>
 <p>Articles by Prof. Kwan Min Lee with significant global academic impact and citations, alongside a comprehensive searchable archive of refereed journal articles, book chapters, and conference proceedings.</p>
-<h2>Landmark Articles (500+ Citations)</h2>
+<h2>Articles with more than 500 citations</h2>
 <div class="recognition-list" style="margin-bottom: 2.25rem;">
 <div class="recognition-entry">
 <div class="recognition-title">Presence, explicated (2004) <span style="font-size: 0.88rem; font-weight: normal; color: var(--text-meta);">(3,030+ Citations)</span></div>
@@ -46,7 +46,7 @@ slug: highly-cited
 </div>
 </div>
 </div>
-<h2>All Publications Archive</h2>
+<h2>Recent publications</h2>
 <div class="pub-list" id="publicationsContainer">
 <div class="pub-entry" data-keywords="virtual influencer’s apologies?: the different perceptions of moral violation and apology between virtual and human influencers in brand endorsements media psychology taenyun kim, chungheon lee, yanqin wu, kwan min lee 2026 article" data-title="Virtual Influencer’s Apologies?: The Different Perceptions of Moral Violation and Apology Between Virtual and Human Influencers in Brand Endorsements" data-venue="Media Psychology" data-year="2026">
 <div class="pub-entry-title">Virtual Influencer’s Apologies?: The Different Perceptions of Moral

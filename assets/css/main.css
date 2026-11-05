@@ -2637,49 +2637,72 @@ html.light-mode .version-btn.active {
 }
 
 /* ==========================================================================
-   Version 2 Layout (No Sidebar, Stretched Content, 3-Column LinkedIn Feed)
+   Version 1 Layout (Default: No Sidebar, Stretched Content, 3-Column LinkedIn Feed)
    ========================================================================== */
-[data-version="v2"] .sidebar {
+html:not([data-version="v2"]) .sidebar,
+[data-version="v1"] .sidebar {
   display: none !important;
 }
 
-[data-version="v2"] #main {
+html:not([data-version="v2"]) #main,
+[data-version="v1"] #main {
   display: block !important;
   max-width: var(--max-width);
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-[data-version="v2"] .page {
+html:not([data-version="v2"]) .page,
+[data-version="v1"] .page {
   width: 100% !important;
   max-width: 100% !important;
 }
 
-[data-version="v2"] .page__inner-wrap {
+html:not([data-version="v2"]) .page__inner-wrap,
+[data-version="v1"] .page__inner-wrap {
   width: 100% !important;
   max-width: 100% !important;
 }
 
 @media screen and (min-width: 1100px) {
-  [data-version="v2"] .linkedin-feed--grid {
+  html:not([data-version="v2"]) .linkedin-feed--grid,
+  [data-version="v1"] .linkedin-feed--grid {
     column-count: 3 !important;
     column-gap: 1.5rem;
   }
 }
 
 @media screen and (max-width: 1099px) and (min-width: 861px) {
-  [data-version="v2"] .linkedin-feed--grid {
+  html:not([data-version="v2"]) .linkedin-feed--grid,
+  [data-version="v1"] .linkedin-feed--grid {
     column-count: 2 !important;
     column-gap: 1.5rem;
   }
 }
 
 @media screen and (max-width: 860px) {
-  [data-version="v2"] #main {
+  html:not([data-version="v2"]) #main,
+  [data-version="v1"] #main {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  [data-version="v2"] .linkedin-feed--grid {
+  html:not([data-version="v2"]) .linkedin-feed--grid,
+  [data-version="v1"] .linkedin-feed--grid {
     column-count: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   Version 2 Layout (Classic Layout: With Profile Sidebar)
+   ========================================================================== */
+[data-version="v2"] .sidebar {
+  display: block !important;
+}
+
+@media screen and (min-width: 981px) {
+  [data-version="v2"] #main {
+    display: flex !important;
+    gap: 3rem;
+    align-items: flex-start;
   }
 }
