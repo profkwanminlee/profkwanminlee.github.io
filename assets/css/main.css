@@ -2335,7 +2335,16 @@ html.light-mode .page__footer .footer__right {
 }
 
 .linkedin-feed-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.25rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.linkedin-feed-title-wrap {
+  flex: 1 1 300px;
 }
 
 .linkedin-feed-title {
@@ -2350,6 +2359,153 @@ html.light-mode .page__footer .footer__right {
   margin: 0;
   font-size: 0.92rem;
   color: var(--text-meta);
+}
+
+/* --------------------------------------------------------------------------
+   Feed View Toggle Pill (LinkedIn vs Image)
+   -------------------------------------------------------------------------- */
+.feed-view-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.feed-view-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--floating-bg);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: var(--floating-shadow);
+  border: 1.5px solid var(--floating-border);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 3px;
+  user-select: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feed-view-toggle-pill:hover {
+  border-color: var(--floating-border-hover);
+  box-shadow: var(--floating-shadow-hover);
+}
+
+.feed-toggle-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-meta);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.feed-toggle-btn:hover {
+  color: var(--text-primary);
+}
+
+.feed-toggle-btn.active {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+html.light-mode .feed-toggle-btn.active {
+  background: #FFFFFF;
+  color: #121110;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Mode-based View Toggle */
+#linkedin-updates[data-feed-view="images"] .linkedin-feed-header {
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+#linkedin-updates[data-feed-view="images"] .linkedin-feed-title-wrap,
+#linkedin-updates[data-feed-view="images"] #linkedinContainer,
+#linkedin-updates[data-feed-view="images"] .linkedin-feed-actions {
+  display: none !important;
+}
+
+#linkedin-updates[data-feed-view="images"] #imagesGalleryContainer {
+  display: grid !important;
+}
+
+#linkedin-updates:not([data-feed-view="images"]) #imagesGalleryContainer {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Biography Images Gallery
+   -------------------------------------------------------------------------- */
+.biography-images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.bio-image-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--border-rule);
+  background: var(--bg-card);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bio-image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.bio-image-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.bio-image-card:hover img {
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 924px) and (min-width: 601px) {
+  .biography-images-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .linkedin-feed-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  #linkedin-updates[data-feed-view="images"] .linkedin-feed-header {
+    align-items: flex-end;
+  }
+  .biography-images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 /* LinkedIn Embed Item & Responsive Sizing */

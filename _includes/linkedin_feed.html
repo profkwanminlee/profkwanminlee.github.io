@@ -1,8 +1,18 @@
-<section class="linkedin-feed-section" id="linkedin-updates">
+<section class="linkedin-feed-section" id="linkedin-updates" data-feed-view="linkedin">
   <div class="linkedin-feed-header">
     <div class="linkedin-feed-title-wrap">
       <h2 class="linkedin-feed-title">Recent Updates &amp; Thought Leadership</h2>
       <p class="linkedin-feed-subtitle">Selected perspectives, executive keynotes, and research columns from the past year (<a href="https://www.linkedin.com/in/leekwanmin" target="_blank" rel="noopener">LinkedIn</a>)</p>
+    </div>
+    <div class="feed-view-toggle-wrap">
+      <div id="feedViewToggle" class="feed-view-toggle-pill" role="group" aria-label="Updates or Image View Switcher">
+        <button type="button" id="btnFeedLinkedIn" class="feed-toggle-btn active" data-view="linkedin" aria-pressed="true" title="LinkedIn updates">
+          <span>LinkedIn</span>
+        </button>
+        <button type="button" id="btnFeedImages" class="feed-toggle-btn" data-view="images" aria-pressed="false" title="Photo gallery">
+          <span>Image</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -30,4 +40,36 @@
     </button>
   </div>
   {% endif %}
+
+  <div id="imagesGalleryContainer" class="biography-images-grid" aria-label="Photo gallery">
+    <div class="bio-image-card">
+      <img src="{{ '/images/img1.jpeg' | relative_url }}" alt="Gallery photograph 1" loading="lazy">
+    </div>
+    <div class="bio-image-card">
+      <img src="{{ '/images/img2.webp' | relative_url }}" alt="Gallery photograph 2" loading="lazy">
+    </div>
+    <div class="bio-image-card">
+      <img src="{{ '/images/img3.jpg' | relative_url }}" alt="Gallery photograph 3" loading="lazy">
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      try {
+        var view = localStorage.getItem('feed_view_mode');
+        if (view === 'images') {
+          var el = document.getElementById('linkedin-updates');
+          if (el) el.setAttribute('data-feed-view', 'images');
+          var bImg = document.getElementById('btnFeedImages');
+          var bLk = document.getElementById('btnFeedLinkedIn');
+          if (bImg && bLk) {
+            bImg.classList.add('active');
+            bImg.setAttribute('aria-pressed', 'true');
+            bLk.classList.remove('active');
+            bLk.setAttribute('aria-pressed', 'false');
+          }
+        }
+      } catch (e) { }
+    })();
+  </script>
 </section>

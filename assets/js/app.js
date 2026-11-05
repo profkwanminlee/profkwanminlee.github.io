@@ -218,6 +218,48 @@ document.addEventListener('DOMContentLoaded', () => {
     btnVersion2.addEventListener('click', () => applyVersion('v2'));
   }
 
+  // Feed View Switcher (LinkedIn vs Image view on Biography page)
+  const btnFeedLinkedIn = document.getElementById('btnFeedLinkedIn');
+  const btnFeedImages = document.getElementById('btnFeedImages');
+  const feedSection = document.getElementById('linkedin-updates');
+
+  function setFeedView(view) {
+    const activeView = view === 'images' ? 'images' : 'linkedin';
+    if (feedSection) {
+      feedSection.setAttribute('data-feed-view', activeView);
+    }
+    try {
+      localStorage.setItem('feed_view_mode', activeView);
+    } catch (e) { }
+
+    if (btnFeedLinkedIn && btnFeedImages) {
+      if (activeView === 'images') {
+        btnFeedImages.classList.add('active');
+        btnFeedImages.setAttribute('aria-pressed', 'true');
+        btnFeedLinkedIn.classList.remove('active');
+        btnFeedLinkedIn.setAttribute('aria-pressed', 'false');
+      } else {
+        btnFeedLinkedIn.classList.add('active');
+        btnFeedLinkedIn.setAttribute('aria-pressed', 'true');
+        btnFeedImages.classList.remove('active');
+        btnFeedImages.setAttribute('aria-pressed', 'false');
+      }
+    }
+  }
+
+  if (feedSection) {
+    let savedFeedView = 'linkedin';
+    try {
+      savedFeedView = localStorage.getItem('feed_view_mode') || 'linkedin';
+    } catch (e) { }
+    setFeedView(savedFeedView);
+
+    if (btnFeedLinkedIn && btnFeedImages) {
+      btnFeedLinkedIn.addEventListener('click', () => setFeedView('linkedin'));
+      btnFeedImages.addEventListener('click', () => setFeedView('images'));
+    }
+  }
+
   // Toggle showing all LinkedIn post embeds
   window.toggleAllLinkedInPosts = function() {
     const hiddenItems = document.querySelectorAll('.linkedin-embed-item.is-initially-hidden');
