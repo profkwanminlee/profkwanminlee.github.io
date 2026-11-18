@@ -1,0 +1,14 @@
+# Hero images for each page
+# Change the image filename here and it will update on the site
+# Images should be placed in the /images/ directory
+
+home: "img1.jpeg"
+appointments: "img1.jpeg"
+highly-cited: "img1.jpeg"
+labs: "img1.jpeg"
+deep-thought-innovation: "img1.jpeg"
+awards: "img1.jpeg"
+patents: "img1.jpeg"
+keynotes: "img1.jpeg"
+services: "img1.jpeg"
+press: "img1.jpeg"
