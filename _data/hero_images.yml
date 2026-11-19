@@ -2,13 +2,13 @@
 # Change the image filename here and it will update on the site
 # Images should be placed in the /images/ directory
 
-home: "img1.jpeg"
-appointments: "img1.jpeg"
-highly-cited: "img1.jpeg"
-labs: "img1.jpeg"
-deep-thought-innovation: "img1.jpeg"
-awards: "img1.jpeg"
-patents: "img1.jpeg"
-keynotes: "img1.jpeg"
-services: "img1.jpeg"
-press: "img1.jpeg"
+home: "kwan-min-lee-ntu-academic-banner.png"
+appointments: "kwan-min-lee-ntu-academic-banner.png"
+highly-cited: "kwan-min-lee-ntu-academic-banner.png"
+labs: "kwan-min-lee-ntu-academic-banner.png"
+deep-thought-innovation: "kwan-min-lee-ntu-academic-banner.png"
+awards: "kwan-min-lee-ntu-academic-banner.png"
+patents: "kwan-min-lee-ntu-academic-banner.png"
+keynotes: "kwan-min-lee-ntu-academic-banner.png"
+services: "kwan-min-lee-ntu-academic-banner.png"
+press: "kwan-min-lee-ntu-academic-banner.png"
