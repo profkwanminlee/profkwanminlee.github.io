@@ -7,3 +7,6 @@ _site/
 .claude/
 *.studio-tmp
 node_modules/
+assets/*.docx
+assets/~$*
+assets/pubs.md

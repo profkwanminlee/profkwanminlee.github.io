@@ -14,6 +14,11 @@ permalink: /:title/
 include:
   - _pages
 
+exclude:
+  - assets/*.docx
+  - assets/~$*
+  - assets/pubs.md
+
 author:
   avatar: "profkwanportrait.jpeg"
   name: "Kwan Min Lee"

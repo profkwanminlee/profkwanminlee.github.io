@@ -1,16 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const mobileNavOverlay = document.getElementById('mobileNavOverlay');
   const mobileNavToggle = document.getElementById('mobileNavToggle');
-  const mobileNavClose = document.getElementById('mobileNavClose');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-list a');
 
   const authorConnectBtn = document.getElementById('authorConnectBtn');
   const authorUrlsWrapper = document.getElementById('authorUrlsWrapper');
-
-  const pubSearchInput = document.getElementById('pubSearchInput');
-  const pubSearchClear = document.getElementById('pubSearchClear');
-  const pubSearchMeta = document.getElementById('pubSearchMeta');
-  const pubEntries = document.querySelectorAll('.pub-entry, .recognition-entry');
 
   function openMobileMenu() {
     if (mobileNavOverlay) {
@@ -42,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNavToggle.addEventListener('click', toggleMobileMenu);
   }
 
-  if (mobileNavClose) {
-    mobileNavClose.addEventListener('click', closeMobileMenu);
-  }
-
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
       closeMobileMenu();
@@ -74,65 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ? 'Close <i class="fas fa-chevron-up"></i>'
         : 'Connect <i class="fas fa-chevron-down"></i>';
     });
-  }
-
-  if (pubSearchInput && pubEntries.length > 0) {
-    const totalPubs = pubEntries.length;
-
-    function filterPublications() {
-      const query = pubSearchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
-
-      if (pubSearchClear) {
-        pubSearchClear.style.display = query.length > 0 ? 'block' : 'none';
-      }
-
-      pubEntries.forEach(entry => {
-        const title = (entry.getAttribute('data-title') || '').toLowerCase();
-        const venue = (entry.getAttribute('data-venue') || '').toLowerCase();
-        const year = (entry.getAttribute('data-year') || '').toLowerCase();
-        const keywords = (entry.getAttribute('data-keywords') || '').toLowerCase();
-        const fullText = entry.textContent.toLowerCase();
-
-        const isMatch = query === '' ||
-          title.includes(query) ||
-          venue.includes(query) ||
-          year.includes(query) ||
-          keywords.includes(query) ||
-          fullText.includes(query);
-
-        if (isMatch) {
-          entry.style.display = '';
-          visibleCount++;
-        } else {
-          entry.style.display = 'none';
-        }
-      });
-
-      if (pubSearchMeta) {
-        if (query === '') {
-          pubSearchMeta.textContent = `Showing all ${totalPubs} publications`;
-        } else if (visibleCount === 0) {
-          pubSearchMeta.textContent = `No publications found matching "${query}"`;
-        } else {
-          pubSearchMeta.textContent = `Showing ${visibleCount} of ${totalPubs} publications`;
-        }
-      }
-    }
-
-    pubSearchInput.addEventListener('input', filterPublications);
-
-    if (pubSearchClear) {
-      pubSearchClear.addEventListener('click', () => {
-        pubSearchInput.value = '';
-        filterPublications();
-        pubSearchInput.focus();
-      });
-    }
-
-    if (pubSearchMeta) {
-      pubSearchMeta.textContent = `Showing all ${totalPubs} publications`;
-    }
   }
 
   const themeToggle = document.getElementById('theme-toggle');
